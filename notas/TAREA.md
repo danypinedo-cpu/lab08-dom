@@ -26,7 +26,7 @@ formPelicula.addEventListener("submit", (evento) => {
   btnBorrar.addEventListener("click", () => {
     li.remove();
   });
-  
+
   li.appendChild(btnBorrar);
   listaPeliculas.appendChild(li);
 });
@@ -40,9 +40,6 @@ formPelicula.addEventListener("submit", (evento) => {
 |Hacer clic en boton "Borrar" en una pelicula       |El elemento desaparece de la interfaz inmediatamente                    |Si                |
  
 ## Por que diseñe asi mi clase
-## Diseño de la clase
-
-### Atributos elegidos
 
 Elegí los atributos `titulo` y `genero` porque son los datos mínimos para identificar una obra audiovisual. 
 
