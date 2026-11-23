@@ -1,6 +1,4 @@
-// Laboratorio 08: DOM, eventos y objetos
 console.log("app.js cargado");
-// Ejercicio 2: seleccionar y modificar el DOM
 const titulo = document.querySelector("#titulo");
 titulo.textContent = "Hola TECSUP";
 titulo.style.color = "blue";
@@ -12,7 +10,7 @@ const lista = document.querySelector("#lista");
 const nuevo = document.createElement("li");
 nuevo.textContent = "JavaScript";
 lista.appendChild(nuevo);
-// Ejercicio 3: evento click
+
 const btnSumar = document.querySelector("#btnSumar");
 const btnReiniciar = document.querySelector("#btnReiniciar");
 const contador = document.querySelector("#contador");
@@ -28,7 +26,7 @@ btnReiniciar.addEventListener("click", () => {
   clics = 0;
   contador.textContent = clics;
 });
-// Ejercicio 4: eventos input y submit
+
 const nombre = document.querySelector("#nombre");
 const saludo = document.querySelector("#saludo");
  
@@ -54,7 +52,7 @@ formulario.addEventListener("submit", (evento) => {
   }
 });
 
-// Ejercicio 5: clases y objetos
+
 class Producto {
   constructor(nombre, precio) {
     this.nombre = nombre;
