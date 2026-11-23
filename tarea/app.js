@@ -8,20 +8,41 @@ class Pelicula {
   }
 }
 
-const p1 = new Pelicula("Matrix", "Ciencia Ficción");
-const p2 = new Pelicula("Gladiador", "Acción");
-console.log(p1.descripcion());
-console.log(p2.descripcion());
-
+const formPelicula = document.querySelector("#formPelicula");
+const tituloInput = document.querySelector("#tituloPelicula");
+const generoInput = document.querySelector("#generoPelicula");
 const listaPeliculas = document.querySelector("#listaPeliculas");
+const mensajeError = document.querySelector("#mensajeError");
 
-const peliculasPrueba = [
-  new Pelicula("Matrix", "Ciencia Ficción"),
-  new Pelicula("Gladiador", "Acción")
-];
+formPelicula.addEventListener("submit", (evento) => {
+  evento.preventDefault(); 
 
-peliculasPrueba.forEach(p => {
+  const titulo = tituloInput.value.trim();
+  const genero = generoInput.value.trim();
+
+  if (titulo === "" || genero === "") {
+    mensajeError.style.display = "block";
+    return;
+  }
+  mensajeError.style.display = "none";
+
+  const nuevaPelicula = new Pelicula(titulo, genero);
+
   const li = document.createElement("li");
-  li.textContent = p.descripcion();
+  li.textContent = nuevaPelicula.descripcion();
+
+  const btnBorrar = document.createElement("button");
+  btnBorrar.textContent = "Borrar";
+  btnBorrar.classList.add("btn-borrar");
+  
+  btnBorrar.addEventListener("click", () => {
+    li.remove();
+  });
+
+  li.appendChild(btnBorrar);
   listaPeliculas.appendChild(li);
+
+  tituloInput.value = "";
+  generoInput.value = "";
+  tituloInput.focus();
 });
